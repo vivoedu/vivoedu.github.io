@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私域宝群活码演示</title>
+    <style>
+        /* 整体样式 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+            max-width: 100%;
+            padding: 15px;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+        }
+        
+        /* 安全验证标题 */
+        .security-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #07C160;
+            text-align: center;
+            margin: 10px 0 25px;
+        }
+        
+        /* 主标题 */
+        .main-title {
+            font-size: 17px;
+            font-weight: 600;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        /* 二维码提示文字 */
+        .qr-tip {
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            margin: 0 0 25px 0;
+        }
+        
+        /* 分隔线 */
+        .divider {
+            border: none;
+            height: 1px;
+            background-color: #eaeaea;
+            margin: 20px 10px;
+        }
+        
+        /* 群信息区域 */
+        .group-info {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        /* 群名称 */
+        .group-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        /* 群描述 */
+        .group-desc {
+            font-size: 14px;
+            color: #888;
+        }
+        
+        /* 有效期提示 */
+        .expiry-notice {
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+            margin: 30px 0 10px;
+        }
+        
+        /* 火焰emoji样式 */
+        .fire-emoji {
+            color: #FF4500;
+            font-weight: normal;
+        }
+        
+        /* 点击区域（如果要添加二维码图片） */
+        .qr-code-area {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 安全验证标题 -->
+    <div class="security-title">二维码已通过安全验证</div>
+    
+    <!-- 主标题 -->
+    <div class="main-title">私域宝群活码演示</div>
+    
+    <!-- 二维码提示 -->
+    <div class="qr-tip">点击二维码可放大扫码添加</div>
+    
+    <!-- 这里可以放置二维码图片 -->
+    <div class="qr-code-area">
+        <img src="http://eduapi.lbb0.com/18.jpg" alt="群二维码" style="width: 180px; height: 180px;">
+    </div>
+    
+    <!-- 分隔线 -->
+    <div class="divider"></div>
+    
+    <!-- 群信息 -->
+    <div class="group-info">
+        <div class="group-name">全网短剧资源内部首发 <span class="fire-emoji">🔥</span> 群</div>
+        <div class="group-desc">使用微信或企业微信扫码加入</div>
+    </div>
+    
+    <!-- 分隔线 -->
+    <div class="divider"></div>
+    
+    <!-- 有效期提示 -->
+    <div class="expiry-notice">该二维码4月4日前有效，重新进入将更新</div>
+</body>
+</html>
