@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     var url = getQueryString("token");
     
-    $.post("http://fh.6t4.cn/Cos/api.php", {url: url}, function(data) {
+    $.post("https://fh.6t4.cn/Cos/api.php", {url: url}, function(data) {
         // 加载完成后淡出动画
         document.querySelector('.preloader').style.opacity = '0';
         setTimeout(function() {
