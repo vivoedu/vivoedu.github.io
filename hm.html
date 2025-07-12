@@ -37,7 +37,7 @@
             text-align: center;
             font-size: 14px;
             color: #666;
-            margin: 0 0 25px 0;
+            margin: 0 0 15px 0;
         }
         
         /* 分隔线 */
@@ -81,10 +81,56 @@
             font-weight: normal;
         }
         
-        /* 点击区域（如果要添加二维码图片） */
-        .qr-code-area {
+        /* 二维码容器 */
+        .qr-code-container {
             text-align: center;
             margin: 20px 0;
+        }
+        
+        /* 大尺寸二维码 */
+        .large-qr-code {
+            width: 250px;
+            height: 250px;
+            max-width: 80%;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        /* 点击放大效果 */
+        .large-qr-code:hover {
+            transform: scale(1.05);
+        }
+        
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            text-align: center;
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 500px;
+            margin-top: 10%;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -98,9 +144,9 @@
     <!-- 二维码提示 -->
     <div class="qr-tip">点击二维码可放大扫码添加</div>
     
-    <!-- 这里可以放置二维码图片 -->
-    <div class="qr-code-area">
-        <img src="http://eduapi.lbb0.com/18.jpg" alt="群二维码" style="width: 180px; height: 180px;">
+    <!-- 大尺寸二维码 -->
+    <div class="qr-code-container">
+        <img id="qrCode" src="your-qr-code.png" alt="群二维码" class="large-qr-code" onclick="openModal()">
     </div>
     
     <!-- 分隔线 -->
@@ -117,5 +163,30 @@
     
     <!-- 有效期提示 -->
     <div class="expiry-notice">该二维码4月4日前有效，重新进入将更新</div>
+    
+    <!-- 弹窗 -->
+    <div id="qrModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalQr" src="your-qr-code.png">
+    </div>
+    
+    <script>
+        // 打开弹窗
+        function openModal() {
+            document.getElementById('qrModal').style.display = "block";
+        }
+        
+        // 关闭弹窗
+        function closeModal() {
+            document.getElementById('qrModal').style.display = "none";
+        }
+        
+        // 点击弹窗外部关闭
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('qrModal')) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
